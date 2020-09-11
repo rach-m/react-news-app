@@ -40,3 +40,13 @@
     border: none;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 300px) {
+    #searchBar {
+        width: 30%;
+    }
+
+    #searchButton {
+        width: 20%;
+    }
+}

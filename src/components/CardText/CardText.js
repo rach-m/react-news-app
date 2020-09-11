@@ -10,7 +10,7 @@ export default function CardText({ title, description, publishedAt, url }) {
         <div id='textContainer'>
             <h3 id='cardTitle'>{title}</h3>
             <h5>{formatDate(publishedAt)}</h5>
-            <p>{description}</p>
+            <p id='cardDescription'>{description}</p>
             <a
                 href={url}
                 target='_blank'
