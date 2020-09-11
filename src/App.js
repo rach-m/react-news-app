@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import axios from "axios";
+import SearchForm from "./components/SearchForm/SearchForm";
+import CardContainer from "./components/CardContainer/CardContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [newsArticles, setNewsArticles] = useState();
+
+    async function fetchNewsApiData(searchQuery, sortType) {
+        let sortingMethod = sortType === "none" ? "" : `&sortBy=${sortType}`;
+        let newsData = await axios.get(
+            `https://newsapi.org/v2/everything?q=${searchQuery}${sortingMethod}&language=en&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+        );
+        setNewsArticles(newsData.data.articles);
+    }
+
+    return (
+        <div className='App'>
+            <SearchForm fetchNewsApiData={fetchNewsApiData} />
+            {newsArticles
+                ? newsArticles.map((article, index) => {
+                      return <CardContainer key={index} article={article} />;
+                  })
+                : null}
+        </div>
+    );
 }
 
 export default App;
