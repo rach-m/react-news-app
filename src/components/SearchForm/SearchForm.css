@@ -1,5 +1,5 @@
 #searchContainer {
-    background-color: #454545;
+    background-color: darkcyan;
     height: 75px;
     width: 100vw;
     font-weight: 500;
@@ -24,19 +24,19 @@
     min-width: 75px;
 }
 .searchInput {
-    color: #ffffff;
-    background-color: #000000;
+    color: black;
     padding: 15px;
     border: none;
 }
 
 #searchButton {
-    background-color: #e71d36;
+    background-color: darkred;
     height: 50px;
     width: 15%;
     min-width: 40px;
     text-align: center;
-    color: #ffffff;
+    color: white;
+    font-weight: 700;
     border: none;
     border-radius: 5px;
 }

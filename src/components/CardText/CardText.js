@@ -14,10 +14,9 @@ export default function CardText({ title, description, publishedAt, url }) {
             <a
                 href={url}
                 target='_blank'
+                rel='noopener noreferrer'
                 aria-label="Link to article's site of origin for the full article">
-                <button id='cardButton' aria->
-                    Read More
-                </button>
+                <button id='cardButton'>Read More</button>
             </a>
         </div>
     );

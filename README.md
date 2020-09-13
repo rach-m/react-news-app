@@ -1,4 +1,4 @@
-# Dia&Co. News App
+# News App
 
 ### Author: [Rachel Moskowitz](https://linkedin.com/in/rachm)
 
