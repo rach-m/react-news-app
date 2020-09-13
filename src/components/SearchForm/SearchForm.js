@@ -10,8 +10,7 @@ export default function SearchForm({ fetchNewsApiData }) {
     function handleSubmit(event) {
         event.preventDefault();
         let searchTerm = event.target[0].value;
-        let sortType = event.target[1].value;
-        fetchNewsApiData(searchTerm, sortType);
+        fetchNewsApiData(searchTerm);
     }
 
     return (
@@ -25,16 +24,6 @@ export default function SearchForm({ fetchNewsApiData }) {
                     aria-label='Search Bar'
                     placeholder='Type Some Keywords'></input>
 
-                <select
-                    id='sortInput'
-                    className='searchInput'
-                    name='sort'
-                    aria-label='Sort By'>
-                    <option value=''>Sort Articles</option>
-                    <option value='publishedAt'>Date</option>
-                    <option value='relevancy'>Relevance</option>
-                    <option value='popularity'>Popularity</option>
-                </select>
                 <input
                     id='searchButton'
                     aria-label='Search Button'

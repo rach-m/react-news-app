@@ -4,7 +4,7 @@ import CardText from "../CardText/CardText";
 import "./CardContainer.css";
 
 export default function CardContainer({
-    urlToImage,
+    image,
     title,
     publishedAt,
     description,
@@ -12,7 +12,7 @@ export default function CardContainer({
 }) {
     return (
         <div id='cardContainer'>
-            <CardImage urlToImage={urlToImage} />
+            <CardImage image={image} />
             <CardText
                 title={title}
                 publishedAt={publishedAt}

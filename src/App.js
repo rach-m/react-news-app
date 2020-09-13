@@ -10,14 +10,13 @@ function App() {
 
     // Takes in two parameters which are passed in from the form in SearchForm.js
     // Fetches the NewsAPI and sets the data in state
-    async function fetchNewsApiData(searchQuery, sortType) {
+    async function fetchNewsApiData(searchQuery) {
         if (searchQuery === "") {
             return alert("Search Term Required");
         }
 
-        let sortingMethod = sortType === "none" ? "" : `&sortBy=${sortType}`;
         let newsData = await axios.get(
-            `https://newsapi.org/v2/everything?q=${searchQuery}${sortingMethod}&language=en&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+            `https://gnews.io/api/v3/search?q=${searchQuery}&image=required&token=${process.env.REACT_APP_NEWS_API_KEY}`
         );
         setNewsArticles(newsData.data.articles);
     }
